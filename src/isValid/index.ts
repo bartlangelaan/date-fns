@@ -33,7 +33,7 @@ import requiredArgs from '../_lib/requiredArgs/index'
  * const result = isValid(new Date(''))
  * //=> false
  */
-export default function isValid(dirtyDate: unknown): boolean {
+export default function isValid(dirtyDate: unknown): dirtyDate is (number | Date) {
   requiredArgs(1, arguments)
 
   if (!isDate(dirtyDate) && typeof dirtyDate !== 'number') {
